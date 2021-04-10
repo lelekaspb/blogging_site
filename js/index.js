@@ -1,14 +1,13 @@
+let url = `https://s2t7movies-ca80.restdb.io/rest/posts?q={"approved":true}&sort=date&dir=-1&max=5`;
+
 function getData() {
-  fetch(
-    `https://s2t7movies-ca80.restdb.io/rest/posts?q={"approved":true}&sort=date&dir=-1&max=5`,
-    {
-      method: "GET",
-      headers: {
-        "x-apikey": "602e3b2b5ad3610fb5bb62ca",
-        "Content-Type": "application/json",
-      },
-    }
-  )
+  fetch(url, {
+    method: "GET",
+    headers: {
+      "x-apikey": "602e3b2b5ad3610fb5bb62ca",
+      "Content-Type": "application/json",
+    },
+  })
     .then((res) => res.json())
     .then((response) => {
       showPosts(response);
@@ -44,3 +43,10 @@ function showPosts(posts) {
     document.querySelector(".posts").appendChild(myClone);
   });
 }
+
+document.querySelector(".all-posts").addEventListener("click", (e) => {
+  e.preventDefault();
+  url = `https://s2t7movies-ca80.restdb.io/rest/posts?q={"approved":true}&sort=date&dir=-1&skip=5`;
+  getData();
+  document.querySelector(".all-posts").classList.toggle("hidden");
+});

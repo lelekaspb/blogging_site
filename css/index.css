@@ -111,3 +111,23 @@ article p > span.post-author {
     padding: 4rem 0 2.5rem;
   }
 }
+
+a.all-posts {
+  text-decoration: none;
+  color: var(--secondary-text-color);
+  grid-column: 2 / span 1;
+  margin: 3vw 0;
+}
+
+a.all-posts:hover {
+  color: var(--main-text-color);
+}
+
+a.all-posts:hover svg.icon {
+  fill: var(--main-text-color);
+}
+
+svg.icon {
+  margin-left: 0.5rem;
+  fill: var(--secondary-text-color);
+}
