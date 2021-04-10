@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <title>Blogging website</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="#" class="nav-link">Home</a>
+          </li>
+          <li>
+            <a href="post-suggestion.html" class="nav-link">Create a post</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-title">
+        <h1>Blogging website</h1>
+        <p>by Olga Baeva</p>
+      </div>
+    </header>
+    <main>
+      <div class="index-title">
+        <h3>Latest posts</h3>
+      </div>
+      <div class="posts"></div>
+    </main>
+    <template class="post-template">
+      <article>
+        <a href="article.html" class="post-link">
+          <h3>Post title</h3>
+          <p>
+            by <span class="post-author">John Doe</span> on
+            <span class="post-date">date</span>
+          </p>
+        </a>
+      </article>
+    </template>
+    <script src="js/index.js"></script>
+  </body>
+</html>

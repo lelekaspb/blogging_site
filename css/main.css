@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,600;0,700;1,500&display=swap");
+
+body {
+  font-family: "Mulish", sans-serif;
+}
+
+:root {
+  --blue: #2db1cc;
+  --white: #ffffff;
+  --main-text-color: #454444;
+  --secondary-text-color: #737373;
+  --red: #cc0000;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+nav {
+  width: 100%;
+  height: calc(2rem + 3vw);
+  background-color: var(--blue);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+.nav-link {
+  text-decoration: none;
+  padding: 1rem;
+  color: var(--white);
+  font-size: calc(0.7rem + 0.5vw);
+}
+
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+nav > ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.red {
+  color: var(--red);
+}
+
+input[type="submit"] {
+  font-family: "Mulish", sans-serif;
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+  padding: 1rem 3rem;
+  font-size: calc(0.7rem + 1vw);
+  border-radius: 2px;
+  transition: 0.2s transform;
+  /* margin: auto; */
+}
+
+input[type="submit"]:hover {
+  transform: scale(1.1, 1.05);
+}
+
+@media only screen and (max-width: 500px) {
+  input[type="submit"] {
+    padding: 0.5rem 3rem;
+    margin: auto;
+  }
+}
+
+label {
+  text-transform: capitalize;
+}
+
+a.home-link {
+  background-color: var(--white);
+  color: var(--main-text-color);
+  border: solid 1px var(--main-text-color);
+  width: 40vw;
+  padding: 2vw;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: inline-block;
+  box-shadow: 3px 5px var(--main-text-color);
+  transition: background-color 0.5s, color 0.5s, box-shadow 0.5s, transform 0.5s;
+  font-size: 1.3vw;
+}
+
+a.home-link:hover {
+  background-color: var(--main-text-color);
+  color: var(--white);
+  box-shadow: none;
+  transform: translateY(5px);
+}
+
+@media only screen and (max-width: 500px) {
+  a.home-link {
+    font-size: 0.6rem;
+  }
+}

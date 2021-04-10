@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/article.css" />
+    <title>Post</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li>
+            <a href="post-suggestion.html" class="nav-link">Create a post</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="left">
+        <div class="left-content">
+          <img src="" alt="avatar" id="avatar" />
+          <p><span class="post-author"></span></p>
+        </div>
+      </section>
+
+      <section class="post">
+        <div class="post-header">
+          <div class="post-header-left">
+            <h1></h1>
+            <p class="paragraph-author">by <span class="post-author"></span></p>
+            <p class="post-date"></p>
+          </div>
+          <div class="post-header-right">
+            <img src="" alt="" id="avatar-mobile" />
+          </div>
+        </div>
+
+        <p class="post-content"></p>
+      </section>
+      <section class="no-comments hidden">
+        <p>No comments yet. Be the first one to comment on this post.</p>
+      </section>
+      <section class="comments"></section>
+      <section class="form">
+        <form class="comment-form">
+          <legend>Add a comment</legend>
+          <label>
+            name <span class="red">*</span>
+            <input type="text" name="username" required placeholder=" " />
+          </label>
+          <label>
+            email <span class="red">*</span>
+            <input type="email" name="email" required placeholder=" " />
+          </label>
+          <label>
+            comment <span class="red">*</span>
+            <textarea
+              name="content"
+              cols="20"
+              rows="15"
+              placeholder=" "
+              required
+            ></textarea>
+          </label>
+          <input type="submit" name="submit" />
+        </form>
+      </section>
+
+      <a href="index.html" class="home-link">back to the home page</a>
+    </main>
+
+    <template class="comment-template">
+      <article class="comment">
+        <h4>name</h4>
+        <p class="comment">comment goes here</p>
+        <p class="comment-date">date</p>
+      </article>
+    </template>
+    <script src="js/article.js"></script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/post-suggestion.css" />
+    <title>Create a new post</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li>
+            <a href="#" class="nav-link">Create a post</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Create a new post</h1>
+      <section>
+        <p class="hidden">
+          Thank you, we have received your post. We will get back to you shortly
+        </p>
+        <form class="post-form">
+          <label>
+            name <span class="red">*</span>
+            <input type="text" name="name" placeholder=" " required />
+          </label>
+          <label>
+            title <span class="red">*</span>
+            <input type="text" name="title" placeholder=" " required />
+          </label>
+          <label>
+            comment <span class="red">*</span>
+            <textarea
+              name="content"
+              cols="30"
+              rows="10"
+              required
+              placeholder=" "
+            ></textarea>
+          </label>
+          <input type="submit" name="submit" />
+        </form>
+      </section>
+
+      <a href="index.html" class="home-link">back to the home page</a>
+    </main>
+    <script src="js/post-suggestion.js"></script>
+  </body>
+</html>
