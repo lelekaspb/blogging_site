@@ -1,5 +1,6 @@
 const form = document.querySelector(".post-form");
 const pics = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+const modal = document.querySelector("#modal");
 
 function randomPics(pics) {
   return pics[Math.floor(Math.random() * pics.length)];
@@ -31,6 +32,7 @@ form.addEventListener("submit", (e) => {
   })
     .then((response) => {
       console.log(response);
+      showModal();
       clearForm();
     })
     .catch((err) => {
@@ -43,7 +45,16 @@ function clearForm() {
   form.elements.name.value = "";
   form.elements.title.value = "";
   form.elements.content.value = "";
-  document.querySelector("p").classList.toggle("hidden");
+  // document.querySelector("p").classList.toggle("hidden");
 }
 
-// console.log(randomPics(pics));
+function showModal() {
+  modal.style.display = "block";
+  document.querySelector("span.close").addEventListener("click", (e) => {
+    e.stopPropagation();
+    modal.style.display = "none";
+  });
+  window.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+}
