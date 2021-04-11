@@ -28,7 +28,11 @@ header {
 }
 
 nav {
-  padding: 1.5vw;
+  /* padding: 1rem;
+  height: calc(2rem + 3vw); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 main {
@@ -55,13 +59,14 @@ main {
 }
 
 .posts > article {
-  height: 15vw;
+  height: auto;
   border-bottom: 1px solid #999999;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   transition: 0.3s transform;
+  padding: 4vw 0;
 }
 
 .post-link {
@@ -94,7 +99,7 @@ article p > span.post-author {
   }
   .header-title {
     width: 100%;
-    margin: auto;
+    /* margin: auto; */
     margin-top: 3vw;
     padding: 0;
   }
@@ -129,5 +134,8 @@ a.all-posts:hover svg.icon {
 
 svg.icon {
   margin-left: 0.5rem;
+  padding-top: 0.3rem;
   fill: var(--secondary-text-color);
+  width: calc(0.5rem + 0.8vw);
+  height: calc(0.5rem + 0.8vw);
 }
