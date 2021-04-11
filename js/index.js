@@ -1,4 +1,4 @@
-let url = `https://s2t7movies-ca80.restdb.io/rest/posts?q={"approved":true}&sort=date&dir=-1&max=5`;
+let url = `https://s2t7movies-ca80.restdb.io/rest/posts?q={"approved":true}&fetchchildren=true&sort=date&dir=-1&max=5`;
 
 function getData() {
   fetch(url, {
@@ -25,6 +25,7 @@ function showPosts(posts) {
   const myTemplate = document.querySelector("template.post-template").content;
 
   posts.forEach((element) => {
+    console.log(element.comments.length);
     //clone
     const myClone = myTemplate.cloneNode(true);
 
@@ -37,7 +38,15 @@ function showPosts(posts) {
       " " +
       new Date(element.date).toLocaleTimeString("it-IT");
     myClone.querySelector("span.post-date").textContent = dateJS;
-    myClone.querySelector("a").href = `article.html?article=${element._id}`;
+    myClone.querySelector(
+      "a.post-link"
+    ).href = `article.html?article=${element._id}`;
+
+    myClone.querySelector("a.comments-link > span").textContent =
+      element.comments.length;
+    myClone.querySelector(
+      "a.comments-link"
+    ).href = `article.html?article=${element._id}#comments`;
 
     //append
     document.querySelector(".posts").appendChild(myClone);
@@ -46,7 +55,7 @@ function showPosts(posts) {
 
 document.querySelector(".all-posts").addEventListener("click", (e) => {
   e.preventDefault();
-  url = `https://s2t7movies-ca80.restdb.io/rest/posts?q={"approved":true}&sort=date&dir=-1&skip=5`;
+  url = `https://s2t7movies-ca80.restdb.io/rest/posts?q={"approved":true}&fetchchildren=true&sort=date&dir=-1&skip=5`;
   getData();
   document.querySelector(".all-posts").classList.toggle("hidden");
 });

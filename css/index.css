@@ -69,6 +69,12 @@ main {
   padding: 4vw 0;
 }
 
+.post-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .post-link {
   text-decoration: none;
   color: var(--main-text-color);
@@ -82,6 +88,19 @@ article p {
   font-size: calc(0.5rem + 0.5vw);
   color: var(--secondary-text-color);
   margin-top: 1rem;
+}
+
+a.comments-link {
+  text-decoration: none;
+  font-size: calc(0.5rem + 0.5vw);
+  color: var(--blue);
+  margin-top: 1rem;
+  display: inline-block;
+  justify-self: flex-end;
+}
+
+a.comments-link:hover {
+  text-decoration: underline;
 }
 
 .posts > article:hover {

@@ -1,6 +1,8 @@
 const searchParams = new URLSearchParams(window.location.search);
 const articleId = searchParams.get("article");
 console.log(articleId);
+const commentsTemplate = document.querySelector("template.comment-template")
+  .content;
 
 fetch(
   "https://s2t7movies-ca80.restdb.io/rest/posts/" +
@@ -40,24 +42,14 @@ function showPost(data) {
   console.log(dateJS);
   document.querySelector("p.post-date").textContent = dateJS;
   if (data.comments.length > 0) {
-    data.comments.sort((a, b) => {
-      return new Date(b.date) - new Date(a.date);
-    });
-    const commentsTemplate = document.querySelector("template.comment-template")
-      .content;
-    console.log(commentsTemplate);
-
+    // data.comments.sort((a, b) => {
+    //   return new Date(b.date) - new Date(a.date);
+    // });
+    console.log(data.comments);
+    //console.log(commentsTemplate);
+    //console.log(data.comments.length);
     data.comments.forEach((comment) => {
-      const commentsClone = commentsTemplate.cloneNode(true);
-      commentsClone.querySelector("h4").textContent = comment.username;
-      commentsClone.querySelector("p.comment").textContent = comment.content;
-      const dateJS =
-        new Date(comment.date).toLocaleDateString("en-GB") +
-        " " +
-        new Date(comment.date).toLocaleTimeString("it-IT");
-      commentsClone.querySelector("p.comment-date").textContent = dateJS;
-      //console.log(dateJS);
-      document.querySelector("section.comments").appendChild(commentsClone);
+      showComment(comment);
     });
   } else {
     document.querySelector("section.no-comments").classList.remove("hidden");
@@ -97,21 +89,7 @@ commentForm.addEventListener("submit", (e) => {
     .then((data) => {
       console.log(data);
       clearForm();
-      const commentsTemplate = document.querySelector(
-        "template.comment-template"
-      ).content;
-      const commentsClone = commentsTemplate.cloneNode(true);
-      commentsClone.querySelector("h4").textContent = data.username;
-      commentsClone.querySelector("p.comment").textContent = data.content;
-      const dateJS =
-        new Date(data.date).toLocaleDateString("en-GB") +
-        " " +
-        new Date(data.date).toLocaleTimeString("it-IT");
-      commentsClone.querySelector("p.comment-date").textContent = dateJS;
-      //console.log(dateJS);
-      document.querySelector("section.comments").prepend(commentsClone);
-      document.querySelector("section.comments").classList.remove("hidden");
-      document.querySelector("section.no-comments").classList.add("hidden");
+      showComment(data);
     })
     .catch((err) => {
       console.error(err);
@@ -123,5 +101,18 @@ function clearForm() {
   commentForm.elements.email.value = "";
   commentForm.elements.username.value = "";
   commentForm.elements.content.value = "";
-  //document.querySelector("p").classList.toggle("hidden");
+}
+
+function showComment(comment) {
+  const commentsClone = commentsTemplate.cloneNode(true);
+  commentsClone.querySelector("h4").textContent = comment.username;
+  commentsClone.querySelector("p.comment").textContent = comment.content;
+  const dateJS =
+    new Date(comment.date).toLocaleDateString("en-GB") +
+    " " +
+    new Date(comment.date).toLocaleTimeString("it-IT");
+  commentsClone.querySelector("p.comment-date").textContent = dateJS;
+  document.querySelector("section.comments").prepend(commentsClone);
+  document.querySelector("section.comments").classList.remove("hidden");
+  document.querySelector("section.no-comments").classList.add("hidden");
 }
