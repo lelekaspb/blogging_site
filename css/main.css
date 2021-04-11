@@ -79,10 +79,7 @@ input[type="submit"]:hover {
     padding: 0.5rem 3rem;
     margin: auto;
   }
-  .post-header-left > h1 {
-    line-height: 33px;
-    margin-bottom: 10px;
-  }
+
   a.home-link {
     text-align: center;
   }

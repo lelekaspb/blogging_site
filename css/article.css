@@ -84,8 +84,10 @@ span.post-author {
   grid-column: 2 / span 1;
 }
 
-.post h1 {
+.post-header-left > h1 {
   font-size: calc(2rem + 1.5vw);
+  line-height: 2.5rem;
+  margin-bottom: 1rem;
   color: var(--main-text-color);
 }
 
@@ -108,6 +110,11 @@ article.comment h4 {
   .post-header {
     display: flex;
     justify-content: space-between;
+  }
+  .post-header-left > h1 {
+    line-height: 30px;
+    margin-bottom: 10px;
+    font-size: calc(1.5rem + 1.5vw);
   }
   .post-header-right {
     display: block;

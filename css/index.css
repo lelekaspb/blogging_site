@@ -139,3 +139,9 @@ svg.icon {
   width: calc(0.5rem + 0.8vw);
   height: calc(0.5rem + 0.8vw);
 }
+
+@media only screen and (max-width: 600px) {
+  a.all-posts {
+    margin: 4vw;
+  }
+}
