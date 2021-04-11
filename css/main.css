@@ -79,6 +79,13 @@ input[type="submit"]:hover {
     padding: 0.5rem 3rem;
     margin: auto;
   }
+  .post-header-left > h1 {
+    line-height: 33px;
+    margin-bottom: 10px;
+  }
+  a.home-link {
+    text-align: center;
+  }
 }
 
 label {
@@ -86,29 +93,39 @@ label {
 }
 
 a.home-link {
-  background-color: var(--white);
-  color: var(--main-text-color);
-  border: solid 1px var(--main-text-color);
-  width: 40vw;
-  padding: 2vw;
+  color: var(--secondary-text-color);
   text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
+  /* text-transform: uppercase; */
+  /* letter-spacing: 1.5px; */
+  width: 100%;
   display: inline-block;
-  box-shadow: 3px 5px var(--main-text-color);
-  transition: background-color 0.5s, color 0.5s, box-shadow 0.5s, transform 0.5s;
-  font-size: 1.3vw;
+  padding: 1vw;
+  transition: transform 0.3s;
+  font-size: calc(0.7rem + 1vw);
+  margin: 10vw auto;
 }
 
 a.home-link:hover {
-  background-color: var(--main-text-color);
-  color: var(--white);
-  box-shadow: none;
-  transform: translateY(5px);
+  transform: scaleY(1.05);
+  color: var(--main-text-color);
 }
 
-@media only screen and (max-width: 500px) {
+/* @media only screen and (max-width: 500px) {
   a.home-link {
     font-size: 0.6rem;
   }
+} */
+
+svg.icon {
+  margin-left: 0.5rem;
+  padding-top: 0.3rem;
+  fill: var(--secondary-text-color);
+  width: calc(0.5rem + 0.8vw);
+  height: calc(0.5rem + 0.8vw);
+  transition: 0.3s transform;
+}
+
+a.home-link:hover svg.icon {
+  fill: var(--main-text-color);
+  transform: translateX(10px);
 }
