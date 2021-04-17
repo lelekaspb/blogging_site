@@ -86,7 +86,7 @@ span.post-author {
 
 .post-header-left > h1 {
   font-size: calc(2rem + 1.5vw);
-  line-height: 2.5rem;
+  line-height: 3rem;
   margin-bottom: 1rem;
   color: var(--main-text-color);
 }
